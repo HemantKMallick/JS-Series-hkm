@@ -1,2 +1,2 @@
 # JS-Series-hkm
-JavaScript Series for Learning
+JavaScript Series for Learning from Hitesh - Chai aur Code
