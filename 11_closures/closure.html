@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure in JavaScript</title>
+  </head>
+  <body>
+    <h1 class="heading">Closure in JavaScript</h1>
+    <div class="colorButtons">
+      <button id="orange">Orange</button>
+      <button id="green">Green</button>
+    </div>
+    <div class="showhideButtons">
+      <p class="contentPara">Show hide content</p>
+      <button id="show">Show</button>
+      <button id="hide">Hide</button>
+    </div>
+  </body>
+  <script>
+    // Your JavaScript code here
+    function outerFunction() {
+      let count = 0;
+
+      function innerFunction() {
+        count++;
+        console.log(`Count: ${count}`);
+      }
+
+      return innerFunction;
+    }
+    outerFunction()(); // Count: 2
+
+    // Lexical scope and closure example
+    // function outer() {
+    //   let username = "Hemant Malick";
+    //   function inner() {
+    //     console.log(`Hello ${username}`);
+    //   }
+    //   inner();
+    // }
+    // outer();
+
+    // closure example
+    //function outer() {}
+  </script>
+  <script>
+    document.getElementById("orange").addEventListener("click", function () {
+      document.body.style.backgroundColor = "orange";
+    });
+    document.getElementById("green").onclick = function () {
+      document.body.style.backgroundColor = "green";
+    };
+    // Show hide content
+    const showBtn = document.getElementById("show");
+    const hideBtn = document.getElementById("hide");
+    const contentPara = document.querySelector(".contentPara");
+    showBtn.addEventListener("click", function () {
+      contentPara.style.display = "block";
+    });
+    hideBtn.addEventListener("click", function () {
+      contentPara.style.display = "none";
+    });
+  </script>
+</html>
